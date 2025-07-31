@@ -1,0 +1,170 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* --- General Styling --- */
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  margin: 0;
+  padding: 1rem;
+  color: #1a1a1a;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  max-width: 600px;
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #344e41; /* deep forest green */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+header p {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #557a55;
+  margin-top: 0;
+}
+
+/* --- Button Styling --- */
+button {
+  background: linear-gradient(45deg, #85d8ce, #3a8d41);
+  color: white;
+  border: none;
+  padding: 0.9rem 2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 6px 12px rgba(58, 141, 65, 0.6);
+  transition: background 0.4s ease, transform 0.25s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #3a8d41, #85d8ce);
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(58, 141, 65, 0.8);
+}
+
+/* --- Box Styling --- */
+.box {
+  margin: 2rem auto;
+  width: 340px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(58, 141, 65, 0.3);
+  transition: box-shadow 0.4s ease;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+.box img {
+  width: 100%;
+  border-radius: 16px;
+  transition: transform 0.7s ease;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.box:hover img {
+  transform: scale(1.07);
+}
+
+.box:hover {
+  box-shadow: 0 12px 50px rgba(58, 141, 65, 0.55);
+}
+
+/* --- CSS Animation (keyframes) --- */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px 3px rgba(58, 141, 65, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px 10px rgba(163, 217, 119, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px 3px rgba(58, 141, 65, 0.5);
+  }
+}
+
+/* Animation class triggered by JS */
+.pulse {
+  animation: pulseGlow 2.5s infinite;
+}
+
+/* --- Modal Styles --- */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.25);
+  width: 350px;
+  max-width: 90%;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+}
+
+.modal.show {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #3a8d41;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.12);
+}
+
+.modal-content p {
+  font-size: 1.15rem;
+  margin: 1.2rem 0 2.5rem;
+  color: #556b2f;
+  font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Modal buttons */
+#closeModalBtn {
+  background: linear-gradient(45deg, #a3d977, #557a55);
+  color: #1a1a1a;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 5px 12px rgba(85, 122, 85, 0.7);
+  transition: background 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+#closeModalBtn:hover {
+  background: linear-gradient(45deg, #557a55, #a3d977);
+  transform: scale(1.05);
+}
